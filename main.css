@@ -24,6 +24,7 @@ body {
   position: relative;
   z-index: 1;
   opacity: 70%;
+  overflow: hidden;
 }
 
 .video-container {
@@ -78,6 +79,7 @@ body {
   align-items: center;
   margin-bottom: 30px;
   align-items: stretch;
+  overflow: hidden;
 /*   border: 1px red solid; */
 }
 
@@ -91,7 +93,7 @@ body {
   border-radius: 5px;
   justify-content: center; 
   position: relative;
-  grid-template-columns: 200px 150px 100px;
+  grid-template-columns: 308px 150px 100px 100px;
   column-gap: 11px;
   row-gap: 15px;
   align-items: center;
@@ -100,6 +102,8 @@ body {
   font-weight: bold;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   padding: 1em;
+  white-space: wrap;
+  overflow: hidden;
 }
 
 .task-input, .task-date {
@@ -143,6 +147,25 @@ body {
   background-color: rgb(255, 137, 137);
 }
 
+.js-done-btn {
+  color: whitesmoke;
+  background-color:	#848db8;
+  font-size: 18px;
+  padding: 4px;
+  font-weight: bold;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.js-done-btn:hover {
+  background-color:	#afbaf1;;
+}
+.js-done-btn:active {
+  background-color:	#afbaf1;;
+}
+
 h1 {
   display: flex;
   justify-content: center;
@@ -175,15 +198,38 @@ h1 {
   padding: 1em;
 }
 
-@media all and (max-width: 585px) {
-  .todo-grid, .history-field, .js-delete-btn {
+@media all and (max-width: 829px) {
+  .todo-grid, .history-field, .js-delete-btn, .js-done-btn {
     font-size: 16px;
-    grid-template-columns: 150px 150px 100px;
+    grid-template-columns: 150px 150px 100px 100px;
   }
   
 }
 
-@media all and (max-width: 515px) {
+@media all and (max-width: 648px) {
+  
+  .main-container {
+  margin-top: 10em;
+  grid-template-columns: 150px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  }
+  
+  .task-input, .task-date {
+    font-size: 16px;
+  }
+  
+  .add-btn {
+    font-size: 16px;
+  }
+
+  .todo-grid, .history-field, .js-delete-btn, .js-done-btn {
+    font-size: 14px;
+    grid-template-columns: 130px 150px 100px 100px;
+    width: 90%;
+  }
+}
+@media all and (max-width: 564px) {
   
   .main-container {
   grid-template-columns: 150px 150px 100px;
@@ -199,36 +245,14 @@ h1 {
     font-size: 16px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
+  .todo-grid, .history-field, .js-delete-btn, .js-done-btn {
     font-size: 14px;
-    grid-template-columns: 130px 150px 100px;
-    width: 90%;
-  }
-}
-@media all and (max-width: 490px) {
-  
-  .main-container {
-  grid-template-columns: 150px 150px 100px;
-  column-gap: 10px;
-  row-gap: 10px;
-  }
-  
-  .task-input, .task-date {
-    font-size: 16px;
-  }
-  
-  .add-btn {
-    font-size: 16px;
-  }
-
-  .todo-grid, .history-field, .js-delete-btn {
-    font-size: 14px;
-    grid-template-columns: 130px 150px 100px;
-    width: 90%;
+    grid-template-columns: 110px 150px 100px 100px;
+    width: 95%;
   }
 }
 
-@media all and (max-width: 490px) {
+@media all and (max-width: 524px) {
   
   .main-container {
   grid-template-columns: 130px 150px 100px;
@@ -246,12 +270,12 @@ h1 {
 
   .todo-grid, .history-field, .js-delete-btn {
     font-size: 14px;
-    grid-template-columns: 110px 150px 100px;
-    width: 95%;
+    grid-template-columns: 90px 100px 100px 100px;
+    width: 96%;
   }
 
 }
-@media all and (max-width: 408px) {
+@media all and (max-width: 444px) {
   
   .main-container {
   grid-template-columns: 110px 150px 100px;
@@ -269,12 +293,12 @@ h1 {
 
   .todo-grid, .history-field, .js-delete-btn {
     font-size: 14px;
-    grid-template-columns: 90px 150px 90px;
-    width: 96%;
+    grid-template-columns: 70px 150px 60px 60px;
+    width: 97%;
   }
 }
 
-@media all and (max-width: 384px) {
+@media all and (max-width: 393px) {
   
 
   .primary-nav {
@@ -297,12 +321,12 @@ h1 {
 
   .todo-grid, .history-field, .js-delete-btn {
     font-size: 13px;
-    grid-template-columns: 70px 150px 90px;
-    width: 96%;
+    grid-template-columns: 60px 150px 50px 50px;
+    width: 97%;
   }
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 360px) {
   
 
   .primary-nav {
@@ -325,7 +349,7 @@ h1 {
 
   .todo-grid, .history-field, .js-delete-btn {
     font-size: 12px;
-    grid-template-columns: 40px 150px 90px;
+    grid-template-columns: 60px 100px 50px 50px;
     width: 96%;
   }
 }
@@ -357,7 +381,7 @@ h1 {
 
   .todo-grid, .history-field, .js-delete-btn {
     font-size: 11px;
-    grid-template-columns: 20px 150px 90px;
+    grid-template-columns: 20px 80px 50px 50px;
     column-gap: 5px;
     row-gap: 5px;
     width: 97%;
