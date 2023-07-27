@@ -201,9 +201,12 @@ body {
 }
 
 @media all and (max-width: 829px) {
-  .todo-grid, .history-field, .js-delete-btn, .js-done-btn {
-    font-size: 16px;
-    grid-template-columns: 150px 150px 100px 100px;
+  .todo-grid, .js-delete-btn, .js-done-btn {
+    font-size: 18px;
+    grid-template-columns: 200px 150px 100px 100px;
+  }
+  .history-field {
+    grid-template-columns: 200px 150px 100px;
   }
   
 }
@@ -218,17 +221,21 @@ body {
   }
   
   .task-input, .task-date {
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .add-btn {
-    font-size: 16px;
+    font-size: 18px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn, .js-done-btn {
-    font-size: 14px;
+  .todo-grid, .js-delete-btn, .js-done-btn {
+    font-size: 18px;
     grid-template-columns: 130px 150px 100px 100px;
     width: 90%;
+  }
+  .history-field {
+    font-size: 18px;
+    grid-template-columns: 130px 150px 100px;
   }
 }
 @media all and (max-width: 564px) {
@@ -247,10 +254,14 @@ body {
     font-size: 16px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn, .js-done-btn {
-    font-size: 14px;
+  .todo-grid, .js-delete-btn, .js-done-btn {
+    font-size: 16px;
     grid-template-columns: 110px 150px 100px 100px;
     width: 95%;
+  }
+  .history-field {
+    font-size: 16px;
+    grid-template-columns: 130px 150px 100px;
   }
 }
 
@@ -263,17 +274,21 @@ body {
   }
   
   .task-input, .task-date {
-    font-size: 15px;
+    font-size: 16px;
   }
   
   .add-btn {
-    font-size: 15px;
+    font-size: 16px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
-    font-size: 14px;
+  .todo-grid, .js-delete-btn {
+    font-size: 16px;
     grid-template-columns: 90px 100px 100px 100px;
     width: 96%;
+  }
+  .history-field {
+    font-size: 16px;
+    grid-template-columns: 100px 150px 100px;
   }
 
 }
@@ -286,18 +301,23 @@ body {
   }
   
   .task-input, .task-date {
-    font-size: 14px;
+    font-size: 15px;
   }
   
   .add-btn {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
-    font-size: 14px;
+  .todo-grid, .js-delete-btn {
+    font-size: 15px;
     grid-template-columns: 70px 150px 60px 60px;
     width: 97%;
   }
+  .history-field {
+    font-size: 15px;
+    grid-template-columns: 80px 150px 70px;
+  }
+  
 }
 
 @media all and (max-width: 393px) {
@@ -321,10 +341,14 @@ body {
     font-size: 14px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
-    font-size: 13px;
+  .todo-grid, .js-delete-btn {
+    font-size: 14px;
     grid-template-columns: 60px 150px 50px 50px;
     width: 97%;
+  }
+  .history-field {
+    font-size: 14px;
+    grid-template-columns: 70px 150px 60px;
   }
 }
 
@@ -349,10 +373,17 @@ body {
     font-size: 13px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
-    font-size: 12px;
+  .todo-grid, .js-delete-btn {
+    font-size: 13px;
     grid-template-columns: 60px 100px 50px 50px;
     width: 96%;
+  }
+  .history-field {
+    font-size: 13px;
+    grid-template-columns: 70px 100px 60px;
+  }
+  .heading {
+    margin-top: 5em;
   }
 }
 
@@ -374,19 +405,30 @@ body {
   }
   
   .task-input, .task-date {
-    font-size: 13px;
+    font-size: 12px;
   }
   
   .add-btn {
-    font-size: 13px;
+    font-size: 12px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
-    font-size: 11px;
-    grid-template-columns: 20px 80px 50px 50px;
+  .todo-grid, .js-delete-btn {
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 13px;
+    grid-template-columns: 30px 150px 100px;
     column-gap: 5px;
     row-gap: 5px;
     width: 97%;
+  }
+  .history-field {
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 13px;
+    grid-template-columns: 40px 150px 1110px;
+  }
+  .heading {
+    margin-top: 3em;
   }
 }
 
@@ -415,13 +457,19 @@ body {
     font-size: 13px;
   }
 
-  .todo-grid, .history-field, .js-delete-btn {
+  .todo-grid, .js-delete-btn {
     display: flex;
     flex-flow: column wrap;
-    font-size: 11px;
+    font-size: 12px;
     grid-template-columns: 20px 150px 90px;
     column-gap: 5px;
     row-gap: 5px;
     width: 97%;
+  }
+  .history-field {
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 12px;
+    grid-template-columns: 30px 150px 100px;
   }
 }
