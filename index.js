@@ -1,15 +1,17 @@
 const inputElement = document.querySelector('.js-task-input');
 const dateElement = document.querySelector('.js-task-date');
+
 let toDoList = JSON.parse(localStorage.getItem('listItems')) ||[{
   task:'',
   duedate: '',
 }];
 
-let historyList = [{
+let historyList = JSON.parse(localStorage.getItem('historyItems')) ||[{
   tasked: '',
   dateFinished: '',
 }];
 
+renderHistory();
 renderList();
 
 function renderList() {
@@ -20,7 +22,7 @@ function renderList() {
 
     let html = `
     <div>${task}</div>
-    <div>${duedate}</div>
+    <div>Assigned on: ${duedate}</div>
     <button class="js-delete-btn">Delete</button>
     <button class="js-done-btn">Done</button>  
     `;
@@ -32,12 +34,24 @@ function renderList() {
   
   document.querySelectorAll('.js-delete-btn').forEach((deleteElement, index) => {
     deleteElement.addEventListener('click', () => {
-      toDoList.splice(index, 1)
+      toDoList.splice(index, 1);
+      document.querySelector('.js-field').classList.remove('todo-grid');
       renderList();
       localStorage.setItem('listItems', JSON.stringify(toDoList));
       console.log('me');
     });
   });
+  document.querySelectorAll('.js-done-btn').forEach((doneElement, index) => {
+    doneElement.addEventListener('click', () => {
+      itemDone();
+      localStorage.setItem('historyItems', JSON.stringify(historyList));
+      toDoList.splice(index, 1);
+      document.querySelector('.js-field').classList.remove('todo-grid');
+      renderList();
+      localStorage.setItem('listItems', JSON.stringify(toDoList));
+    });
+  });
+
 }
 
 document.querySelector('.js-add-btn').addEventListener('click', () => {
@@ -72,6 +86,59 @@ function addItem() {
   renderList();
 
   localStorage.setItem('listItems', JSON.stringify(toDoList));
-}
+};
+
+function itemDone() {
+  
+  const gotTask = toDoList[0];
+  const gotDate = toDoList[0];
+
+  let tasked = gotTask.task;
+  let dateFinished = gotDate.duedate;
+
+  historyList.push({
+    tasked,
+    dateFinished,
+  });  
+
+  renderHistory();
+
+  localStorage.setItem('historyItems', JSON.stringify(historyList));
+
+}; 
+
+function renderHistory() {
+  let historyHTML = '';
+
+  historyList.forEach((historyObject, index) => {
+    const { tasked, dateFinished } = historyObject;
+    
+    let html2 =  `
+    
+    <div>${tasked}</div>
+    <div>Finished on: ${dateFinished}</div>
+    <button class="js-delete-btn">Delete</button>
+    `;
+     historyHTML += html2;
+     document.querySelector('.js-history-field').classList.add('history-field');
+  });
+  document.querySelector('.js-history-field').innerHTML = historyHTML;
+
+  if (document.querySelector('.js-history-field').innerHTML = historyHTML) {
+    document.querySelector('.js-heading').innerText = 'Histoire';
+    document.querySelector('.js-heading').classList.add('heading');
+  }
+   
+  document.querySelectorAll('.js-delete-btn').forEach((deleteElement, index) => {
+    deleteElement.addEventListener('click', () => {
+      historyList.splice(index, 1);
+       document.querySelector('.js-history-field').classList.remove('history-field');
+      document.querySelector('.js-heading').classList.remove('heading'); 
+      renderHistory();
+      localStorage.setItem('historyItems', JSON.stringify(toDoList));
+    });
+  });
+};
+
 
 
