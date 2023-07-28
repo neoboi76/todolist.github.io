@@ -159,13 +159,33 @@ body {
   cursor: pointer;
   justify-content: center;
 }
-
 .js-done-btn:hover {
   background-color:	#afbaf1;;
 }
 .js-done-btn:active {
   background-color:	#afbaf1;;
 }
+
+.js-completed-btn {
+  color: rgb(0, 0, 0);
+  background-color:	#f6f7ff;
+  font-size: 18px;
+  padding: 4px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.js-completed-btn:hover {
+  background-color:	#ffffff;;
+}
+.js-completed-btn:active {
+  background-color:	#ffffff;;
+}
+
+
 
 .heading {
   display: flex;

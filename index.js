@@ -24,7 +24,8 @@ function renderList() {
     <div>${task}</div>
     <div>Deadline on: ${duedate}</div>
     <button class="js-delete-btn">Delete</button>
-    <button class="js-done-btn">Done</button>  
+    <button class="js-done-btn">Done</button>
+      
     `;
     listHTML += html
     
@@ -41,14 +42,22 @@ function renderList() {
       console.log('me');
     });
   });
+  
   document.querySelectorAll('.js-done-btn').forEach((doneElement, index) => {
     doneElement.addEventListener('click', () => {
+      
+      
+      doneElement.innerText = 'Finished';
+      doneElement.classList.add('js-completed-btn');
+    
+      setTimeout( () => {
       itemDone();
       localStorage.setItem('historyItems', JSON.stringify(historyList));
       toDoList.splice(index, 1);
       document.querySelector('.js-field').classList.remove('todo-grid');
       renderList();
       localStorage.setItem('listItems', JSON.stringify(toDoList));
+      }, 200)
     });
   });
 
@@ -101,6 +110,8 @@ function itemDone() {
     tasked,
     dateFinished,
   });  
+
+  document.querySelector('.js-done-btn').innerText === 'Finished';
 
   renderHistory();
 
