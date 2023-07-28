@@ -130,7 +130,7 @@ body {
   background-color: rgb(2, 214, 2);
 }
 
-.js-delete-btn {
+.js-delete-btn, .js-second-delete-btn {
   color: whitesmoke;
   background-color: red;
   font-size: 18px;
@@ -141,10 +141,10 @@ body {
   cursor: pointer;
 }
 
-.js-delete-btn:hover {
+.js-delete-btn:hover, .js-second-delete-btn:hover {
   background-color: rgb(255, 137, 137);
 }
-.js-delete-btn:active {
+.js-delete-btn:active, .js-second-delete-btn:active {
   background-color: rgb(255, 137, 137);
 }
 
@@ -201,7 +201,7 @@ body {
 }
 
 @media all and (max-width: 829px) {
-  .todo-grid, .js-delete-btn, .js-done-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn, .js-done-btn {
     font-size: 18px;
     grid-template-columns: 200px 150px 100px 100px;
   }
@@ -228,7 +228,7 @@ body {
     font-size: 18px;
   }
 
-  .todo-grid, .js-delete-btn, .js-done-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn, .js-done-btn {
     font-size: 18px;
     grid-template-columns: 130px 150px 100px 100px;
     width: 90%;
@@ -254,7 +254,7 @@ body {
     font-size: 16px;
   }
 
-  .todo-grid, .js-delete-btn, .js-done-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn, .js-done-btn {
     font-size: 16px;
     grid-template-columns: 110px 150px 100px 100px;
     width: 95%;
@@ -281,7 +281,7 @@ body {
     font-size: 16px;
   }
 
-  .todo-grid, .js-delete-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn{
     font-size: 16px;
     grid-template-columns: 90px 100px 100px 100px;
     width: 96%;
@@ -308,7 +308,7 @@ body {
     font-size: 15px;
   }
 
-  .todo-grid, .js-delete-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn {
     font-size: 15px;
     grid-template-columns: 70px 150px 60px 60px;
     width: 97%;
@@ -341,7 +341,7 @@ body {
     font-size: 14px;
   }
 
-  .todo-grid, .js-delete-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn {
     font-size: 14px;
     grid-template-columns: 60px 150px 50px 50px;
     width: 97%;
@@ -373,7 +373,7 @@ body {
     font-size: 13px;
   }
 
-  .todo-grid, .js-delete-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn {
     font-size: 13px;
     grid-template-columns: 60px 100px 50px 50px;
     width: 96%;
@@ -412,7 +412,7 @@ body {
     font-size: 12px;
   }
 
-  .todo-grid, .js-delete-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn {
     display: flex;
     flex-flow: column wrap;
     font-size: 13px;
@@ -457,7 +457,7 @@ body {
     font-size: 13px;
   }
 
-  .todo-grid, .js-delete-btn {
+  .todo-grid, .js-delete-btn, .js-second-delete-btn {
     display: flex;
     flex-flow: column wrap;
     font-size: 12px;

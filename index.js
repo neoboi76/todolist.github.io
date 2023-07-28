@@ -22,7 +22,7 @@ function renderList() {
 
     let html = `
     <div>${task}</div>
-    <div>Assigned on: ${duedate}</div>
+    <div>Deadline on: ${duedate}</div>
     <button class="js-delete-btn">Delete</button>
     <button class="js-done-btn">Done</button>  
     `;
@@ -55,7 +55,7 @@ function renderList() {
 }
 
 document.querySelector('.js-add-btn').addEventListener('click', () => {
-  if (inputElement.value === '') {
+  if (inputElement.value === '' && dateElement.value === '' || dateElement.value === '' || inputElement.value === '') {
     return;
   } else {
     addItem();
@@ -64,7 +64,7 @@ document.querySelector('.js-add-btn').addEventListener('click', () => {
 
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
-    if (inputElement.value === '') {
+    if (inputElement.value === '' && dateElement.value === '' || dateElement.value === '' || inputElement.value === '') {
       return;
     } else {
       addItem();
@@ -82,6 +82,7 @@ function addItem() {
   })
 
   inputElement.value = '';
+  dateElement.value = '';
 
   renderList();
 
@@ -117,7 +118,7 @@ function renderHistory() {
     
     <div>${tasked}</div>
     <div>Finished on: ${dateFinished}</div>
-    <button class="js-delete-btn">Delete</button>
+    <button class="js-second-delete-btn">Delete</button>
     `;
      historyHTML += html2;
      document.querySelector('.js-history-field').classList.add('history-field');
@@ -129,10 +130,11 @@ function renderHistory() {
     document.querySelector('.js-heading').classList.add('heading');
   }
    
-  document.querySelectorAll('.js-delete-btn').forEach((deleteElement, index) => {
+  document.querySelectorAll('.js-second-delete-btn').forEach((deleteElement, index) => {
     deleteElement.addEventListener('click', () => {
       historyList.splice(index, 1);
-       document.querySelector('.js-history-field').classList.remove('history-field');
+      renderHistory();
+      document.querySelector('.js-history-field').classList.remove('history-field');
       document.querySelector('.js-heading').classList.remove('heading'); 
       renderHistory();
       localStorage.setItem('historyItems', JSON.stringify(toDoList));
